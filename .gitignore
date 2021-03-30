@@ -1,4 +1,6 @@
 *.exe
 .vscode
 progress.txt
+Important!!.txt
+graph_template.cpp
 **/tempCodeRunnerFile.cpp

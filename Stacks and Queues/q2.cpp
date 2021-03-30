@@ -1,34 +1,35 @@
 // Implement queue
 
-int front=-1, rare=-1;
+int front=-1, rare=-1, size = 100;
 
 // for push
 void enqueue (int a) {
+    queue[(rare+1)%size] = a;
     if (front == -1) {
-        front  = rare = 0;
+        front = 0;
         queue[rare] = a;
-    } else 
-        queue[++rare] = a;
+    }
 }
 
 // for pop 
 int dequeue () {
-    front++;
-    if (front > rare) front = rare = -1;
-    return queue[front++];
+    int temp = queue[front];
+    if (front == rare) front = rare = -1; 
+    else front = (front+1)%size;
+    return temp;
 }
 
 // for peek
 int peek () {
-    return stack[top];
+    return queue[front];
 }
 
 // checking underflow
 bool is_empty () {
-    return top == -1;
+    return front == -1;
 }
 
 // checking overflow
 bool is_full () {
-    return top == MAX_SIZE-1;
+    return (rare+1)%size == front;
 }

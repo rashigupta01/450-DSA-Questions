@@ -1,3 +1,4 @@
+// Approach 1 : keep a boolean vector to know the path. Now if a node points to any node in the current path there is a back edge
 bool isCyclic(int V, vector<int> adj[]) {
 	vector<bool> visited(V, false);
 	for (int i=0; i<V; i++) {
@@ -20,3 +21,9 @@ bool util (vector<int> adj[], vector<bool> &visited, int source, vector<bool> &p
 	path[source] = false;
 	return false;
 }
+
+// Approach 2 : https://www.geeksforgeeks.org/detect-cycle-direct-graph-using-colors/
+// White : not visited
+// Grey : visited and being processed
+// Black : visited and processed
+// If a node points to grey node that means there is a back edge
