@@ -22,6 +22,9 @@ int maxDepth(TreeNode* root) {
     return max(maxDepth(root->left), maxDepth(root->right)) + 1;
 }
 
+// DFS approach     : given in second link
+// start DFS from a root and find farthest node from it. Now we start DFS from this node and the farthest node from it, will give the diameter of the tree. 
+
 // Efficient approach :  given in third link 
 // https://leetcode.com/problems/diameter-of-binary-tree/discuss/101132/Java-Solution-MaxDepth
 public class Solution {
@@ -43,6 +46,3 @@ public class Solution {
         return Math.max(left, right) + 1;
     }
 }
-
-// DFS approach     : given in second link
-// start DFS from a root and find farthest node from it. Now we start DFS from this node and the farthest node from it, will give the diameter of the tree. 

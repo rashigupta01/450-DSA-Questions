@@ -1,3 +1,6 @@
+// Greedy approach : select the jobs in dec order of profit and execute it if there is a free slot
+
+// ----------------- My approach - O(n^2) approach -----------------------
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -31,3 +34,7 @@ pair<int,int> JobScheduling(Job arr[], int n)
     }
     return make_pair(count, ans);
 }
+
+// ------------------------ O(n) approach on gfg------------------
+//* https://www.geeksforgeeks.org/job-sequencing-using-disjoint-set-union/
+// The idea is to create all the adjacent booked time slots into one set.

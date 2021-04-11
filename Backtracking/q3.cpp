@@ -7,6 +7,7 @@ void wordBreakBack(vector<string>& dict, string s, vector<string> &result, int i
     string word = "";
     for (int j=i; j<s.size(); j++) {
         word+=s[j];
+        // hashing the dictionary words can reduce the complexity
         for (int m=0; m<dict.size(); m++) {
             if(dict[m] == word) {
                 wordBreakBack(dict, s, result, j+1, current+word+" ");
@@ -37,7 +38,7 @@ void wordBreak(string str, int n, string result="") {
                 cout << result << endl;
                 return;
             }
-            wordBreakUtil(str.substr(i, n-i), n-i, result + prefix + " ");
+            wordBreak(str.substr(i, n-i), n-i, result + prefix + " ");
         }
     }      
 }

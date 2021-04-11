@@ -1,33 +1,29 @@
 bool SolveSudoku (int grid[N][N]) {
     
-    vector<vector<int>> rows(9);
-    vector<vector<int>> coloumns(9);
-    vector<vector<int>> boxes(9);
-    for (int i=0; i<9; i++) {
-        rows[i] = vector<int> (9, 0);
-        coloumns[i] = vector<int> (9, 0);
-        boxes[i] = vector<int> (9, 0);
-    }
+    vector<vector<bool>> rows(9, vector<bool> (9, false));
+    vector<vector<int>> coloumns(9, vector<bool> (9, false));
+    vector<vector<int>> boxes(9, vector<bool> (9, false));
+    
     for (int i=0; i<9; i++) {
         for (int j=0; j<9; j++) {
             
             if (grid[i][j]==0) continue;
             
             if (rows[i][grid[i][j]-1]) return false;
-            rows[i][grid[i][j]-1] = 1;
+            rows[i][grid[i][j]-1] = true;
             
             if (coloumns[j][grid[i][j]-1]) return false;
-            coloumns[j][grid[i][j]-1] = 1;
+            coloumns[j][grid[i][j]-1] = true;
 
             if (boxes[3*(i/3) + j/3][grid[i][j]-1]) return false;
-            boxes[3*(i/3) + j/3][grid[i][j]-1] = 1;
+            boxes[3*(i/3) + j/3][grid[i][j]-1] = true;
         }
     }
     
     return SolveSudokuUtil (grid, rows, coloumns, boxes, 0, 0);
 }
 
-bool SolveSudokuUtil(int grid[N][N], vector<vector<int>> &rows, vector<vector<int>> &coloumns, vector<vector<int>> boxes, int row, int col)  
+bool SolveSudokuUtil(int grid[N][N], vector<vector<bool>> &rows, vector<vector<bool>> &coloumns, vector<vector<bool>> boxes, int row, int col)  
 { 
     if (col>8 || row>8) return true;
     if (grid[row][col]) {
@@ -41,10 +37,8 @@ bool SolveSudokuUtil(int grid[N][N], vector<vector<int>> &rows, vector<vector<in
         rows[row][i] = 1;
         coloumns[col][i] = 1;
         boxes[(row/3)*3 + col/3][i] = 1;
-
-        bool canComplete = SolveSudokuUtil (grid, rows, coloumns, boxes, row+((col+1)/9), (col+1)%9);
         
-        if (canComplete) return true;
+        if (SolveSudokuUtil (grid, rows, coloumns, boxes, row+((col+1)/9), (col+1)%9)) return true;
         
         // backtrack
         grid[row][col] = 0;
