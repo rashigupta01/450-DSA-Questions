@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/reverse-string/submissions/
 // https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/
 
 

@@ -29,7 +29,7 @@ public:
             m->right = new TreeNode(r1->left->val);
             TreeNode(r1->left, m->right);
         }
-     }
+    }
     TreeNode* invertTree(TreeNode* root) {
         if(!root) return NULL;
         TreeNode* m = new TreeNode(root->val);

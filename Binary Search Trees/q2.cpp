@@ -33,7 +33,6 @@ public:
         } else {
             root->right = deleteNode (root->right, key);
         }
-        
         return root;
     }
 };

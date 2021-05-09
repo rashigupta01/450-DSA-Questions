@@ -70,7 +70,7 @@ class Graph {
         for (int i=0; i<v; i++) {
             for (auto next : adj[i]) {
                 Edge tempEdge (i, next.first,  next.second);
-                    edges.push_back (tempEdge);
+                edges.push_back (tempEdge);
             }
         }
 

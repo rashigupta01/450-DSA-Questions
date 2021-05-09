@@ -1,4 +1,6 @@
 // My approach: same as second approach on https://www.geeksforgeeks.org/design-and-implement-special-stack-data-structure/
+// Visit the link's thrid approach for space optimization
+
 stack<int> curmin;
 int count = 0;
 
