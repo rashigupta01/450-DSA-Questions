@@ -1,3 +1,5 @@
+// Following code is DFS approach, but since we need to find min steps BFS would be a better choice
+
 int dir[][2] = {{2, -1}, {2, 1}, {1, 2}, {1, -2}, {-2, -1}, {-2, 1}, {-1, 2}, {-1, -2}};
 
 void util (int x, int y, vector<int>& target, int N,  int stepcount, vector<vector<int>> &visited) {

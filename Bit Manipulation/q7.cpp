@@ -7,7 +7,7 @@ int main() {
     cin>>x>>y>>l>>r;
 
     /*
-    // Method 1
+     * Method 1
     for (int i = l; i <= r; i++)
     {
         if(y&(1<<(i-1))) {
@@ -18,6 +18,6 @@ int main() {
     */
 
     // Method 2
-    x = x|(y&((1<<(r-l+1)-1)<<(l-1)));
+    x = x | (y&((1<<(r-l+1)-1)<<(l-1)));
     cout<<x;
 }
