@@ -8,7 +8,6 @@ vector<int> topoSort(int V, vector<int> adj[]) {
             util (adj, i, visited, res);
     }
     reverse (res.begin(), res.end());
-    // for (auto ele : res) cout<<ele<<" ";
     return res;
 }
 
@@ -21,3 +20,5 @@ void util(vector<int> adj[], int s, vector<bool>& visited, vector<int>& res) {
     }
     res.push_back(s);
 }
+
+// iterative method : Kahn's algorithm

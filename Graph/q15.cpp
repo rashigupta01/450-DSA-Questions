@@ -1,3 +1,4 @@
+// DFS approach
 class Graph {
     public:
         int v;
@@ -42,3 +43,5 @@ public:
         return false;
     }
 };
+
+// BFS approach : check if topological ordering is possible or not
