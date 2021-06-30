@@ -8,7 +8,8 @@ int productLessThanK (vector<int>& a, int k) {
     for (int i=1; i<=a.size(); i++) {
         for (int j=1; j<=k; j++) {
             if (a[i-1]<=j) {
-                dp[i][j] = dp[i-1][j] + dp[i-1][j/a[i-1]]+1;
+                dp[i][j] = dp[i-1][j] + dp[i-1][j/a[i-1]]+1;        
+                        // here one is added as a subsequence with just a[i-1] is also possible
             } else {
                 dp[i][j] = dp[i-1][j];
             }

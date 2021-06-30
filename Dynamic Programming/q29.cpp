@@ -16,13 +16,17 @@ int jump(vector<int>& a) {
             	jumpto = j;
         	}
         }
-        if(maxVal == 0)
+        if(maxVal == 0)     
             return -1;
         i+=jumpto;
         jumps++;
     }
     return jumps;
 }
+
+
+// DP approaches : (TC-O(n^2)) https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/
+
 
 // Approach 2: (refer: https://www.geeksforgeeks.org/minimum-number-jumps-reach-endset-2on-solution/) 
 // For visual understanding refer: https://www.youtube.com/watch?v=vBdo7wtwlXs

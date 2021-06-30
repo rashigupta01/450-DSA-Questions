@@ -1,4 +1,12 @@
-// DP tabulation approach : O(N*N)
+// Very important and tricky : O(nlogn) approach
+// https://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+// refer youtube videos for explaination
+
+// O (N*N) space optimized approach:
+// https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
+
+// My DP tabulation approach : O(N*N)
+// Algo: find the lcs in the array and sorted array
 class Solution {
 public:
     unordered_map<string, int> memo;
