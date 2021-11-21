@@ -11,8 +11,7 @@ public:
         util (image, sr, sc, newColor, visited);
         return image;
     }
-    
-    
+        
     void util(vector<vector<int>>& image, int sr, int sc, int newColor, vector<vector<bool>>& visited) {
         int dir[][2] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         
