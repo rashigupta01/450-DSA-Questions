@@ -133,3 +133,31 @@ public:
         return 0;
     }
 };
+
+
+/// SHORT CODE WITHOUT CREATING A GRAPH::
+int wordLadderLength(string beginWord, string endWord, vector<string>& wordList) {
+    unordered_set<string> exist (wordList.begin(), wordList.end());
+    
+    queue<pair <string, int>> q;
+    unordered_map<string, bool> visited;
+    q.push({beginWord, 1});
+    visited[beginWord] = true;
+    while (!q.empty()) {
+        auto temp = q.front();
+        if (temp.first == endWord) return temp.second;
+        q.pop();
+        for (int i=0; i<temp.first.size(); i++) {
+            string s = temp.first;
+            for (int k = 0; k<26; k++) {
+                s[i] = 'a' + k;
+                if (exist.find(s) != exist.end() && !visited[s]) {
+                    q.push({s, temp.second+1});
+                    visited[s] = true;
+                }
+            }
+        }
+    }
+        
+    return 0;
+}

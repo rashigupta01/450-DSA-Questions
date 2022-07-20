@@ -44,3 +44,5 @@ public:
 private:
     unordered_map<Node*, Node*> copies;
 };
+
+// BFS approach: https://www.geeksforgeeks.org/clone-an-undirected-graph/

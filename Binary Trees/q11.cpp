@@ -34,7 +34,7 @@ vector<int> topView(struct Node *root)
 
 
 // Efficient approach: *No hash map used* 
-// Keep a stack for nodes to the left of root and will be their in top view
+// Keep a stack for nodes to the left of root and will be there in top view
 // Keep a vector for nodes to the right of root and wil be their in top view
 // Using a level order traversal if the current node's hd is less than maxLeft push it in the stack
 // and if it is more than maxright push_back it in the vector

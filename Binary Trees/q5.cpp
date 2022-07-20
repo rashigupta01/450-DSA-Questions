@@ -1,5 +1,6 @@
 // https://www.geeksforgeeks.org/create-a-mirror-tree-from-the-given-binary-tree/
 
+// To modify the existing tree
 // Approach 1: swap the links of left and right pointer for all nodes except leaf nodes
 class Solution {
 public:
@@ -16,8 +17,8 @@ public:
      }
 };
 
+// To create a new tree
 // Approach 2: call the function with two root nodes and reccurse it for left of original and right of new tree and vice versa
-
 class Solution {
 public:
     void invertHelper(TreeNode* r1, TreeNode* m) {

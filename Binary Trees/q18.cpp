@@ -23,3 +23,8 @@ Node * bToDLL(Node *root)
     } else root->left = NULL;
     return root;
 }
+
+// maintain the head and tail of linked list and add the current node after tail according to inorder
+
+// keep a prev element node and update left of cur with prev
+// linearly traverse the dll in reverse using prev and update the next pointer

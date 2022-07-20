@@ -17,3 +17,20 @@ void populateNext(struct node* p) {
 }
 
 // Queue can be avoided by using reverse inorder traversal and keeping a previous node and keep assigning it as successor
+
+// O(1) space by maintaining a previous node in inorder and asigning current node(root) to next of prev
+void inorder (Node* root, Node** prev) {
+    if (!root) return;
+    inorder (root->left, prev);
+    if (*prev) {
+        (*prev)->next = root;
+    }
+    *prev = root;
+    inorder (root->right, prev);
+}
+
+void populateNext(struct Node* p) {
+    if (!p) return;
+    Node* prev = NULL;
+    inorder(p, &prev);
+}
