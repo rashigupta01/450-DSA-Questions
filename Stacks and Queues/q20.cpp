@@ -30,3 +30,7 @@ int QueueStack :: pop()
     
     return num;
 }
+
+// **space optimized: using only one queue
+// for push: push the element, pop n-1 times and keep pushing simultaneously
+// for pop: normal pop

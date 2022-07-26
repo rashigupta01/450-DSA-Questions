@@ -4,6 +4,7 @@
 // so we have to try all possible swaps with max 
 
 // NOTE: Greedy works when elements are distinct
+
 class Solution
 {
     public:

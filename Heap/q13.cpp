@@ -1,5 +1,6 @@
 // Wrong approach: using reccursion check if left and right child is less than root or not
 // Problem in this approach: this approach do not check for completeness (heap is always complete)
+// Note: Pass index of calculated with formula and check 
 
 // Correct approach : using queue (BFS)
 bool isHeap(struct Node * tree)

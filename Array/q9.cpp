@@ -10,7 +10,9 @@
 // * Refer youtube for visual explaination
 
 
-// ! Logic same as on gfg, failing on some testcases
+// GFG approach : https://www.geeksforgeeks.org/minimize-the-maximum-difference-between-the-heights/
+
+// !  failing on some testcases
 class Solution {
   public:
     int getMinDiff(int arr[], int n, int k) {

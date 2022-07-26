@@ -27,8 +27,8 @@ public:
 // Heaps approach : O(NlogN)
 class Solution {
 public:
-    
-    string reorganizeString(string s) {
+    string rearrangeString(string s)
+    {
         vector<int> counter (26, 0);
         for (int i=0; i<s.size(); i++) {
             counter[s[i]-'a']++;
@@ -40,33 +40,21 @@ public:
                 pq.push ({counter[i], i});
             }
         }
+        if (pq.top().first > (s.size()+1)/2) return "-1";
         
         int lastletter = -1;
-        string ans = "";
+        string ans (s.size(), 'a');
+        int pos = 0;
         while (pq.size()>0) {
             auto letter = pq.top();
             pq.pop();
-            if (lastletter != letter.second) {
-                ans.push_back(letter.second + 'a');
-                letter.first--;
-                if (letter.first) {
-                    pq.push(letter);
-                }
-                lastletter = letter.second;
-            } else {
-                if (pq.size()==0) return "";
-                auto letter2 = pq.top();
-                pq.pop();
-                ans.push_back(letter2.second + 'a');
-                letter2.first--;
-                if (letter2.first) {
-                    pq.push(letter2);
-                }
-                pq.push(letter);
-                lastletter = letter2.second;
-            }
+            
+            while (letter.first--) {
+                if (pos >= s.size()) pos = 1;
+                ans[pos] = 'a' + letter.second;
+                pos+=2;
+            }        
         }
-        
         return ans;
     }
 };

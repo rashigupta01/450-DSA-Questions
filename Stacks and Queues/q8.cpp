@@ -1,5 +1,5 @@
 // My approach: same as second approach on https://www.geeksforgeeks.org/design-and-implement-special-stack-data-structure/
-// Visit the link's thrid approach for space optimization
+// Visit this link for space optimization: https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
 
 stack<int> curmin;
 int count = 0;

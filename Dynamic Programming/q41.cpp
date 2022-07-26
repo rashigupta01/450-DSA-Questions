@@ -1,10 +1,10 @@
 
-// My recursive code (can be memoized) ***Not sure if its correct or not***
 // difficult to convert this approach into bottom-up
-int lps(char *seq, int i, int j)
+int lps(string seq, int i, int j, vector<vector<int>> &dp)
 {
     if (i==j) return 1;
     if (i>j) return 0;
+    if (dp[i][j]!=-1) return dp[i][j];
 
     int found = -1;
     for (int k = i; k<j; k++) {
@@ -13,8 +13,13 @@ int lps(char *seq, int i, int j)
             break;
         }
     }
-    if (found!= -1) return max (lps(seq, i, j-1), lps(seq, found+1, j-1)+2);
-    return lps(seq, i, j-1);
+    if (found!= -1) return dp[i][j] = max (lps(seq, i, j-1, dp), lps(seq, found+1, j-1, dp)+2);
+    return dp[i][j] = lps(seq, i, j-1, dp);
+}
+int longestPalinSubseq(string A) {
+    int n = A.size();
+    vector<vector<int>> dp(n, vector<int>(n, -1));
+    return lps (A, 0, n-1, dp);
 }
 
 // simpler approach on gfg editorial

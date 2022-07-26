@@ -26,7 +26,6 @@ public:
         int res = INT_MAX;
         for (int k = i; k<j; k++) {
             res = min (res, 1+ util (s, i, k) + util (s, k+1, j));
-            // cout << "(" << i << ","<<j<<") -> " << res << endl;
         }
         return dp[i][j] = res;
     }

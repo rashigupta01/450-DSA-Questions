@@ -5,6 +5,16 @@ initialize max_element with INT_MAX and iterate over the array while keep updati
 No of comparisions : 2*n
 Small modification - initialize max_element and min_element with first two elements 
 No of comparisions : 1 + 2(n-2)
+*/
+pair<long long, long long> getMinMax(long long a[], int n) {
+    long long mn=a[0], mx=a[0];
+    for (int i=1; i<n; i++) {
+        mn = min (mn, a[i]);
+        mx = max (mx, a[i]);
+    }
+    return {mn, mx};
+}
+/*
 
 Approach 2: (Tournament Method)
 use divide and conquer approach

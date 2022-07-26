@@ -24,3 +24,6 @@ bool graphColoring(bool graph[101][101], int m, int V)
     vector<int> colour(V, -1);
     return util (graph, m, V, 0, colour);
 }
+
+// second approach on https://www.geeksforgeeks.org/m-coloring-problem-backtracking-5/
+// can be used to calculate the value of m

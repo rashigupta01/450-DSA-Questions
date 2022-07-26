@@ -1,4 +1,4 @@
-// My code :-
+// My code :- ((((This approach is not getting passed))))
 bool findWinner(int x, int y, int n)
 {
     // row 0 represent B

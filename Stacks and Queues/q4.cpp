@@ -89,3 +89,6 @@ int findMiddle(myStack *ms)
 
 	return ms->mid->data; 
 } 
+
+
+// Another approach: use a stack and deque

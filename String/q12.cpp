@@ -39,3 +39,11 @@ int main() {
 // Simple O(n) approach
 // keep a counter, increment for 1 decrement for 0, as counter becomes 0 increment result
 // https://www.geeksforgeeks.org/split-the-binary-string-into-substrings-with-equal-number-of-0s-and-1s/
+int maxSubStr(string str){
+    int res=0, cur = 0;
+    for (int i=0; i<str.size(); i++) {
+        cur += str[i]=='0' ? 1 : -1;
+        res += cur==0;
+    }
+    return cur==0 ? res : -1;
+}

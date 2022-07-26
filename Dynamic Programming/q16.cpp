@@ -4,6 +4,18 @@
 
 // O (N*N) space optimized approach:
 // https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
+int longestSubsequence(int n, int a[])
+{
+    vector<int> dp (n, 1);
+    int res = 0;
+    for (int i=0;i<n; i++) {
+        for (int j=0; j<i; j++) {
+            if (a[j] < a[i]) dp[i] = max (dp[i], dp[j]+1);
+        }
+        res = max (res, dp[i]);
+    }
+    return res;
+}
 
 // My DP tabulation approach : O(N*N)
 // Algo: find the lcs in the array and sorted array
